@@ -1,0 +1,17 @@
+---
+ - name: Update apt cache and install mate
+   apt:
+     name: ubuntu-mate-desktop
+     update_cache: yes
+
+ - name: Install base packages
+   apt:
+     name: "{{ packages }}"
+   vars:
+     packages:
+      - feh
+      - tmux
+      - ranger
+      - dconf-editor
+      - git
+      - xclip
