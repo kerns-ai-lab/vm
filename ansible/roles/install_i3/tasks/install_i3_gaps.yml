@@ -1,0 +1,60 @@
+#
+# Reference: https://gist.github.com/boreycutts/6417980039760d9d9dac0dd2148d4783
+#
+---
+ - name: Clone i3-gaps
+   git:
+     repo: 'https://github.com/Airblader/i3.git'
+     dest: '/home/vagrant/p/lib/Airblader/i3-gaps'
+
+
+ - name: Checkout & Pull gaps
+   shell: git checkout gaps && git pull
+   args:
+     chdir: '/home/vagrant/p/lib/Airblader/i3-gaps'
+
+
+ - name: Autoreconf i3
+   shell: autoreconf --force --install
+   args:
+     chdir: '/home/vagrant/p/lib/Airblader/i3-gaps'
+
+
+ - name: Remove build directory
+   file:
+     path: '/home/vagrant/p/lib/Airblader/i3-gaps/build'
+     state: absent
+
+
+ - name: Replace build directory
+   file:
+     path: '/home/vagrant/p/lib/Airblader/i3-gaps/build'
+     state: directory
+     mode: '0755'
+
+
+ - name: Configure i3 build
+   shell: ../configure --prefix=/usr --sysconfdir=/etc --disable-sanitizers
+   args:
+     chdir: '/home/vagrant/p/lib/Airblader/i3-gaps/build'
+
+
+ - name: Build i3-gaps
+   gather_facts: True
+   make:
+     chdir: '/home/vagrant/p/lib/Airblader/i3-gaps/build'
+     params:
+      - NUM_THREADS: "{{ ansible_processor_vcpus }}"
+
+
+ - name: Install i3-gaps
+   become: True
+   make:
+     chdir: '/home/vagrant/p/lib/Airblader/i3-gaps/build'
+     target: install
+
+
+ - name: Apply i3 settings
+   copy:
+     src: i3-config
+     dest: '/home/vagrant/.config/i3/config'
