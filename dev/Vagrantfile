@@ -1,0 +1,51 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure("2") do |config|
+  # Give vm definition a handle
+  config.vm.define "kernsai"
+
+  # Build upon base box from Vagrant repository
+  config.vm.box = "ubuntu/xenial64"
+
+  # Uncomment public network and populate with your bridged IP
+  # config.vm.network "public_network", ip: "< YOUR IP >"
+  # config.vm.network "private_network", type: "dhcp"
+
+  # Mount shared folders required for initialization
+  config.vm.synced_folder "shared", "/home/vagrant/shared"
+  #config.vm.synced_folder "ansible", "/home/vagrant/ansible"
+  
+  # We don't want to insert a vagrant key into the box
+  config.ssh.insert_key = false
+
+  config.vm.provider "virtualbox" do |vb|
+    # GUI
+    vb.gui = true
+    # Customize the amount of memory on the VM:
+    vb.memory = "4096"
+    # Support working when on 3DS VPN (Required for adapter provisioning on VPN)
+    vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
+    # Enable multi-core
+    vb.cpus = 4
+    vb.customize ["modifyvm", :id, "--ioapic", "on"]
+    vb.customize ["modifyvm", :id, "--clipboard", "bidirectional"]
+    
+  end
+     
+  config.vm.provision "shell", path: "./scripts/provision.sh"
+  #config.vm.provision "ansible_local" do |ansible|
+  #  ansible.playbook = "provision_nuc.yml"
+  #  ansible.provisioning_path = "/home/vagrant/ansible"
+  #  # True by default. Set explicitly as this is intended
+  #  ansible.install = true  
+  #  ansible.install_mode = "pip"
+  #  ansible.version = "2.6.1"
+  #  ansible.skip_tags = ["nuc:hw"]
+  #  ansible.groups = {
+  #    "vadapter" => ["vadapter"],
+  #    "adapters:children" => ["vadapter"]
+  #  }
+  #end 
+
+end

@@ -1,0 +1,12 @@
+# Ignore all user folders in shared directories
+**/shared/*
+!**/shared/.keepfile
+
+# Ignore all generated boxes
+**/*.box
+
+# Ignore created Vagrant directories
+**/.vagrant/
+
+# Ignore generated vagrant logfiles
+**/*.log
