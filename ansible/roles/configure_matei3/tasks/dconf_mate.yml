@@ -6,5 +6,11 @@
    shell: dconf write /org/mate/desktop/session/required-components/windowmanager "'i3'"
 
 
+   # If we don't do this we get the desktop as an i3 window
  - name: Disable desktop icons
    shell: dconf write /org/mate/desktop/background/show-desktop-icons "false"
+
+
+   # Favor using i3 wallpaper w/ feh
+ - name: Disable Mate background
+   shell: dconf write /org/mate/desktop/background/draw-background "false"
