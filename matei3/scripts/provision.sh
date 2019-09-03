@@ -33,6 +33,9 @@
 # Provision.sh
 #
 # -------------------------------------------------------------
+git_user="$1"
+git_pass="$2"
+
 sudo apt-get update
 # Required dependencies for running ansible and cloning repository
 sudo apt-get install -y python-pip git
