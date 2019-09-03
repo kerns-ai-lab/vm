@@ -26,14 +26,14 @@ Vagrant.configure("2") do |config|
   git_pass = ""
 
   # Only run secrets prompts on first up command
-  if Dir.glob("#{File.dirname(__FILE__)}/.vagrant/machines/kernsai/virtualbox/*").empty? and v_arg == 'up'
-	# Prompt for user secrets. (Hide password and encode)
-	print "Enter Github User: "
-	git_user = URI.escape(STDIN.gets.chomp)
-	print "Enter Github Password: "
-	git_pass = URI.escape(STDIN.noecho(&:gets).chomp)
-	print "\n"
-  end
+  #if Dir.glob("#{File.dirname(__FILE__)}/.vagrant/machines/kernsai/virtualbox/*").empty? and v_arg == 'up'
+#	# Prompt for user secrets. (Hide password and encode)
+#	print "Enter Github User: "
+#	git_user = URI.escape(STDIN.gets.chomp)
+#	print "Enter Github Password: "
+#	git_pass = URI.escape(STDIN.noecho(&:gets).chomp)
+#	print "\n"
+#  end
 
   config.vm.provider "virtualbox" do |vb|
     # GUI
