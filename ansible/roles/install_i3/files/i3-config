@@ -191,10 +191,5 @@ gaps outer 15
 for_window [class="^.*"] border pixel 2
 hide_edge_borders both
 
+# Set wallpaper
 exec feh --bg-scale /home/vagrant/shared/wallpaper.jpg
-
-exec dconf write /org/mate/background/show-desktop-icons 'false'
-exec dconf write /org/mate/background/draw-background 'false'
-exec dconf write /org/mate/background/picture-opacity '0'
-exec dconf write /org/mate/background/picture-filename '/home/vagrant/shared/wallpaper.jpg'
-
