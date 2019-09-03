@@ -1,0 +1,6 @@
+---
+ - hosts: all
+   roles:
+    - { role: 'install_mate' }
+    - { role: 'install_i3' }
+    - { role: 'configure_matei3' }
