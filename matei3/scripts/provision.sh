@@ -1,10 +1,14 @@
-sudo apt-get update
-sudo apt-get install -y ubuntu-mate-desktop \
-    feh \
-    tmux \
-    git \
-    dconf-editor \
-    ranger
+#!/bin/bash
+
+# Old Code
+# ----
+#sudo apt-get update
+#sudo apt-get install -y ubuntu-mate-desktop \
+#    feh \
+#    tmux \
+#    git \
+#    dconf-editor \
+#    ranger
 
 
 # User/System configuration
@@ -23,3 +27,15 @@ sudo apt-get install -y ubuntu-mate-desktop \
 # Ansible
 
 # Desktop Background
+
+# -------------------------------------------------------------
+#
+# Provision.sh
+#
+# -------------------------------------------------------------
+sudo apt-get update
+# Required dependencies for running ansible and cloning repository
+sudo apt-get install -y python-pip git
+git clone https://${git_user}:${git_pass}@github.com/kerns-ai-lab/vm.git /home/vagrant/vm
+mv /home/vagrant/vm/ansible /home/vagrant/
+
