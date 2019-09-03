@@ -2,6 +2,9 @@
 # vi: set ft=ruby :
 
 Vagrant.configure("2") do |config|
+  # Capture the Vagrant command
+  v_arg = ARGV[0]
+
   # Give vm definition a handle
   config.vm.define "kernsai"
 
@@ -23,7 +26,7 @@ Vagrant.configure("2") do |config|
   git_pass = ""
 
   # Only run secrets prompts on first up command
-  if Dir.glob("#{File.dirname(__FILE__)}/.vagrant/machines/kernsai/virtualbox/*".empty? and v_arg == 'up'
+  if Dir.glob("#{File.dirname(__FILE__)}/.vagrant/machines/kernsai/virtualbox/*").empty? and v_arg == 'up'
 	# Prompt for user secrets. (Hide password and encode)
 	print "Enter Github User: "
 	git_user = URI.escape(STDIN.gets.chomp)
