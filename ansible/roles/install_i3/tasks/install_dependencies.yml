@@ -1,5 +1,6 @@
 ---
  - name: Install i3 Dependencies
+   become: True
    apt:
      name: "{{ packages }}"
    vars:
