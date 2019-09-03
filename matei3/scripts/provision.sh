@@ -39,7 +39,7 @@ git_pass="$2"
 sudo apt-get update
 # Required dependencies for running ansible and cloning repository
 sudo apt-get install -y python-pip git
-git clone https://${git_user}:${git_pass}@github.com/kerns-ai-lab/vm.git /home/vagrant/vm
+git clone https://github.com/kerns-ai-lab/vm.git /home/vagrant/vm
 # Copy ansible folder from cloned repo to conventional directory 
 cp -r /home/vagrant/vm/ansible /home/vagrant/ansible
 # Set permissions
