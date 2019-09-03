@@ -18,3 +18,11 @@
    # Favor using i3 wallpaper w/ feh
  - name: Disable Mate background
    shell: dconf write /org/mate/desktop/background/draw-background "false"
+
+
+ - name: Configure Mate top panel widgets
+   shell: dconf write /org/mate/panel/general/object-id-list "['menu-bar', 'notification-area', 'clock', 'shutdown']"
+
+
+ - name: Configure Mate to only launch with top panel
+   shell: dconf write /org/mate/panel/general/toplevel-id-list "['top']"
