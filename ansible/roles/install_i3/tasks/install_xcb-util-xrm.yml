@@ -6,8 +6,12 @@
    git:
      repo: 'https://github.com/Airblader/xcb-util-xrm.git'
      dest: '/home/vagrant/p/lib/Airblader/xcb-util-xrm'
-     recursive: True
 
+
+ - name: Update git submodule
+   shell: git submodule update --init
+   args:
+     chdir: '/home/vagrant/p/lib/Airblader/xcb-util-xrm'
 
  - name: Autogen xcb-util-xrm
    shell: autogen.sh
