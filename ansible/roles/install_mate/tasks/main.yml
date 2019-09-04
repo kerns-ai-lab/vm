@@ -1,10 +1,13 @@
 ---
  - name: Update apt cache and install mate
+   become: True
    apt:
      name: ubuntu-mate-desktop
      update_cache: yes
 
+
  - name: Install base packages
+   become: True
    apt:
      name: "{{ packages }}"
    vars:
