@@ -5,7 +5,6 @@
      name: "{{ packages }}"
    vars:
      packages:
-      - libxcb-dev
       - libxcb-keysyms1-dev
       - libpango1.0-dev
       - libxcb-util0-dev
