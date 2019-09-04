@@ -14,7 +14,7 @@
      chdir: '/home/vagrant/p/lib/Airblader/xcb-util-xrm'
 
  - name: Autogen xcb-util-xrm
-   shell: autogen.sh
+   shell: ./autogen.sh
    args:
      chdir: '/home/vagrant/p/lib/Airblader/xcb-util-xrm'
 
