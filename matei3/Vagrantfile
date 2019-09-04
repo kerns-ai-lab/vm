@@ -9,7 +9,7 @@ Vagrant.configure("2") do |config|
   config.vm.define "kernsai"
 
   # Build upon base box from Vagrant repository
-  config.vm.box = "ubuntu/xenial64"
+  config.vm.box = "ubuntu/bionic64"
 
   # Uncomment public network and populate with your bridged IP
   # config.vm.network "public_network", ip: "< YOUR IP >"
