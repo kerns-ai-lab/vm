@@ -3,7 +3,6 @@
    become: True
    apt:
      name: ubuntu-mate-desktop
-     update_cache: yes
 
 
  - name: Install base packages
