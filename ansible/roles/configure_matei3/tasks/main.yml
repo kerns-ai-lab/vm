@@ -1,2 +1,3 @@
 ---
  - import_tasks: dconf_mate.yml
+ - import_task: configure_vagrant_user.yml

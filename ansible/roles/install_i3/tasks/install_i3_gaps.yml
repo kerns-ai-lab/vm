@@ -71,4 +71,3 @@
  - name: Shutdown box to force restart and have settings applied
    become: True
    command: /sbin/shutdown -h now
-
