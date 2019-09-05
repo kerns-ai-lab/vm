@@ -1,6 +1,0 @@
-#
-# Configure vagrant user
-#
----
- - name: Set vagrant user password
-   shell: echo "vagrant:vagrant" | chpasswd
