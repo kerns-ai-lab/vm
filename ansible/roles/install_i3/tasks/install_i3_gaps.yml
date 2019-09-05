@@ -44,7 +44,7 @@
    make:
      chdir: '/home/vagrant/p/lib/Airblader/i3-gaps/build'
      params:
-      - NUM_THREADS: "{{ ansible_processor_vcpus }}"
+       NUM_THREADS: "{{ ansible_processor_vcpus }}"
 
 
  - name: Install i3-gaps
@@ -52,6 +52,14 @@
    make:
      chdir: '/home/vagrant/p/lib/Airblader/i3-gaps/build'
      target: install
+
+
+ - name: Create i3 config directory
+   file:
+     path: /home/vagrant/.config/i3
+     state: directory
+     owner: vagrant
+     group: vagrant
 
 
  - name: Apply i3 settings
