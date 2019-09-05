@@ -66,3 +66,9 @@
    copy:
      src: i3-config
      dest: '/home/vagrant/.config/i3/config'
+
+
+ - name: Shutdown box to force restart and have settings applied
+   become: True
+   command: /sbin/shutdown -h now
+
