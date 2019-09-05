@@ -24,7 +24,7 @@
    make:
      chdir: '/home/vagrant/p/lib/Airblader/xcb-util-xrm'
      params:
-      - NUM_THREADS: "{{ ansible_processor_vcpus }}"
+       NUM_THREADS: "{{ ansible_processor_vcpus }}"
 
 
  - name: Install xcb-util-xrm
