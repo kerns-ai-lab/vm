@@ -10,6 +10,7 @@
  - name: Set Mate Desktop session required-components-list
    shell: dconf write /org/mate/desktop/session/required-components-list "['window-manager', 'panel']"
 
+
    # If we don't do this we get the desktop as an i3 window
  - name: Disable desktop icons
    shell: dconf write /org/mate/desktop/background/show-desktop-icons "false"
