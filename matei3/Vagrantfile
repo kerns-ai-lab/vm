@@ -6,10 +6,10 @@ Vagrant.configure("2") do |config|
   v_arg = ARGV[0]
 
   # Give vm definition a handle
-  config.vm.define "kernsai"
+  config.vm.define "mate_i3"
 
   # Build upon base box from Vagrant repository
-  config.vm.box = "ubuntu/bionic64"
+  config.vm.box = "kernsai/mate-base"
 
   # Uncomment public network and populate with your bridged IP
   # config.vm.network "public_network", ip: "< YOUR IP >"
@@ -20,20 +20,6 @@ Vagrant.configure("2") do |config|
   
   # We don't want to insert a vagrant key into the box
   config.ssh.insert_key = false
-
-  # Define variables
-  git_user = ""
-  git_pass = ""
-
-  # Only run secrets prompts on first up command
-  #if Dir.glob("#{File.dirname(__FILE__)}/.vagrant/machines/kernsai/virtualbox/*").empty? and v_arg == 'up'
-#	# Prompt for user secrets. (Hide password and encode)
-#	print "Enter Github User: "
-#	git_user = URI.escape(STDIN.gets.chomp)
-#	print "Enter Github Password: "
-#	git_pass = URI.escape(STDIN.noecho(&:gets).chomp)
-#	print "\n"
-#  end
 
   config.vm.provider "virtualbox" do |vb|
     # GUI
