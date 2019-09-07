@@ -2,18 +2,8 @@
  - name: Update apt cache and install mate
    become: True
    apt:
-     name: ubuntu-mate-desktop
-
-
- - name: Install base packages
-   become: True
-   apt:
      name: "{{ packages }}"
    vars:
-     packages:
-      - feh
-      - tmux
-      - ranger
-      - dconf-editor
-      - git
-      - xclip
+    packages:
+     - ubuntu-mate-desktop
+     - dconf-editor

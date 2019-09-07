@@ -1,0 +1,13 @@
+---
+ - name: Install common base packages
+   become: True
+   apt:
+     name: "{{ packages }}"
+   vars:
+     packages:
+      - feh
+      - tmux
+      - ranger
+      - git
+      - xclip
+      - vim
