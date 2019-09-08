@@ -2,34 +2,11 @@
 # Configure mate for compatibility with i3
 #
 ---
- - name: Switch Window Manager to i3
-   shell: dconf write /org/mate/desktop/session/required-components/windowmanager "'i3'"
-
-
-   # By default file-manager and other components are added that we don't want
- - name: Set Mate Desktop session required-components-list
-   shell: dconf write /org/mate/desktop/session/required-components-list "['windowmanager', 'panel']"
-
-
-   # If we don't do this we get the desktop as an i3 window
- - name: Disable desktop icons
-   shell: dconf write /org/mate/desktop/background/show-desktop-icons "false"
-
-
-   # Favor using i3 wallpaper w/ feh
- - name: Disable Mate background
-   shell: dconf write /org/mate/desktop/background/draw-background "false"
-
-
- - name: Configure Mate to only launch with top panel
-   shell: dconf write /org/mate/panel/general/toplevel-id-list "['top']"
-
-
- - name: Copy dconf panel settings file to local system
+ - name: Copy dconf settings file to local system
    copy:
-     src: dconf.org.mate.panel.settings
-     dest: '/tmp/dconf.org.mate.panel.settings'
+     src: dconf.org.mate.settings
+     dest: '/tmp/dconf.org.mate.settings'
 
 
  - name: Apply dconf settings for panels
-   shell: dconf load /org/mate/panel/ < /tmp/dconf.org.mate.panel.settings
+   shell: dconf load /org/mate/ < /tmp/dconf.org.mate.settings
