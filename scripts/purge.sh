@@ -18,6 +18,10 @@ apt-get autoclean -y
 dd if=/dev/zero of=/EMPTY bs=1M
 rm -f /EMPTY
 
+# Remove cloned projects
+rm -rf /home/vagrant/ansible
+rm -rf /home/vagrant/vm
+
 # Remove bash history
 unset HISTFILE
 rm -f /root/.bash_history
