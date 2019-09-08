@@ -1,0 +1,6 @@
+---
+ - name: Install purge script for cleaning up vm prior to packaging
+   copy:
+     src: purge.sh
+     dest: /home/vagrant/purge.sh
+     mode: +x

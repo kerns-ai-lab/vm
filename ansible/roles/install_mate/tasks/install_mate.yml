@@ -1,0 +1,9 @@
+---
+ - name: Update apt cache and install mate (This can take a long time)
+   become: True
+   apt:
+     name: "{{ packages }}"
+   vars:
+    packages:
+     - ubuntu-mate-desktop
+     - dconf-editor

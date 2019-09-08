@@ -1,0 +1,7 @@
+---
+ - name: Delete the ubuntu user created with mate
+   become: True
+   user:
+    name: ubuntu
+    state: absent
+    remove: yes

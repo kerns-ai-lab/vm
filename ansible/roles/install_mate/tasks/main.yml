@@ -1,9 +1,4 @@
 ---
- - name: Update apt cache and install mate (This can take a long time)
-   become: True
-   apt:
-     name: "{{ packages }}"
-   vars:
-    packages:
-     - ubuntu-mate-desktop
-     - dconf-editor
+ - import_tasks: install_mate.yml
+ - import_tasks: remove_ubuntu_user.yml
+ - import_tasks: install_purge.yml
