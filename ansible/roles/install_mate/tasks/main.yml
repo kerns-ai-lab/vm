@@ -1,5 +1,5 @@
 ---
- - name: Update apt cache and install mate
+ - name: Update apt cache and install mate (This can take a long time)
    become: True
    apt:
      name: "{{ packages }}"
