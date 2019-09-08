@@ -40,7 +40,6 @@
 
 
  - name: Build i3-gaps
-   gather_facts: True
    make:
      chdir: '/home/vagrant/p/lib/Airblader/i3-gaps/build'
      params:
