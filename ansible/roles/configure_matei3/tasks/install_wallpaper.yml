@@ -1,5 +1,11 @@
 ---
  - name: Install default wallpaper
    copy:
-     src: wallpaper.jpg
-     dest: /home/vagrant/.config/i3/wallpaper.jpg
+     src: 3D-Sphere.jpg
+     dest: /usr/share/backgrounds/ubuntu-mate-common/3D-Sphere.jpg
+
+
+ - name: Configure Slick Greeter to use wallpaper as login background
+   copy:
+     src: slick-greeter.conf
+     dest: /etc/lightdm/slick-greeter.conf
