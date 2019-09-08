@@ -21,9 +21,15 @@
    shell: dconf write /org/mate/desktop/background/draw-background "false"
 
 
- - name: Configure Mate top panel widgets
-   shell: dconf write /org/mate/panel/general/object-id-list "['menu-bar', 'notification-area', 'clock', 'shutdown']"
-
-
  - name: Configure Mate to only launch with top panel
    shell: dconf write /org/mate/panel/general/toplevel-id-list "['top']"
+
+
+ - name: Copy dconf panel settings file to local system
+   copy:
+     src: dconf.panel.settings
+     dest: '/tmp/dconf.org.mate.panel.settings'
+
+
+ - name: Apply dconf settings for panels
+   shell: dconf load /org/mate/panel/ < /tmp/dconf.org.mate.panel.settings

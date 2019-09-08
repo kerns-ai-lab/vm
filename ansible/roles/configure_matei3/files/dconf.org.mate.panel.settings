@@ -1,0 +1,26 @@
+[general]
+object-id-list=['object-0', 'object-1']
+toplevel-id-list=['top']
+
+[toplevels/top/background]
+color='rgb(0,0,0)'
+type='none'
+
+[objects/object-1]
+applet-iid='ClockAppletFactory::ClockApplet'
+toplevel-id='top'
+position=1806
+object-type='applet'
+panel-right-stick=false
+
+[objects/object-1/prefs]
+format='24-hour'
+custom-format=''
+
+[objects/object-0]
+toplevel-id='top'
+position=0
+object-type='menu'
+use-menu-path=false
+panel-right-stick=false
+tooltip='Main Menu'
