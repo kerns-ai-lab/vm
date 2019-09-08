@@ -192,3 +192,6 @@ hide_edge_borders both
 
 # Set wallpaper
 exec feh --bg-scale /home/vagrant/shared/wallpaper.jpg
+
+# Start Transparency
+exec --no-startup-id compton
