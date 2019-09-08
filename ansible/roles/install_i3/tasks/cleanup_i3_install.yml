@@ -1,0 +1,6 @@
+---
+ - name: Cleanup
+   become: True
+   file:
+     state: absent
+     path: '/home/vagrant/p/lib/' 

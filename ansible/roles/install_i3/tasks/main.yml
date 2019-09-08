@@ -2,4 +2,6 @@
  - import_tasks: install_dependencies.yml
  - import_tasks: install_xcb-util-xrm.yml
  - import_tasks: install_i3_gaps.yml
+ - import_tasks: configure_i3.yml
+ - import_tasks: cleanup_i3_install.yml
 

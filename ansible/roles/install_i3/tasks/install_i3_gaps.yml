@@ -52,17 +52,3 @@
    make:
      chdir: '/home/vagrant/p/lib/Airblader/i3-gaps/build'
      target: install
-
-
- - name: Create i3 config directory
-   file:
-     path: /home/vagrant/.config/i3
-     state: directory
-     owner: vagrant
-     group: vagrant
-
-
- - name: Apply i3 settings
-   copy:
-     src: i3-config
-     dest: '/home/vagrant/.config/i3/config'
