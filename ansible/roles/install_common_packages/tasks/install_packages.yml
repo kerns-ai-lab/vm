@@ -17,7 +17,7 @@
    lineinfile:
      path: '/home/vagrant/.bashrc'
      insertafter: EOF
-     line: {{ item }}
+     line: "{{ item }}"
    with_items:
      - 'export VISUAL=vim'
      - 'export EDITOR="$VISUAL"'
