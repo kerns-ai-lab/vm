@@ -17,3 +17,11 @@
     - virtualenv
     - setuptools
     - pipenv
+
+
+ - name: Set python3.7 as default for both python and python3
+   become: True
+   shell: update-alternatives --install {{ item }} 10
+   with_items:
+    - '/usr/bin/python3 python3 /usr/bin/python3.7'
+    - '/usr/bin/python python /usr/bin/python3.7'
