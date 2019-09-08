@@ -1,11 +1,13 @@
 ---
  - name: Install default wallpaper
+   become: True
    copy:
      src: 3D-Sphere.jpg
      dest: /usr/share/backgrounds/ubuntu-mate-common/3D-Sphere.jpg
 
 
  - name: Configure Slick Greeter to use wallpaper as login background
+   become: True
    copy:
      src: slick-greeter.conf
      dest: /etc/lightdm/slick-greeter.conf
