@@ -13,11 +13,11 @@
       - vim
 
 
-  - name: Set vim as default editor
-    lineinfile:
-      path: '/home/vagrant/.bashrc'
-      insertafter: EOF
-      line: {{ item }}
-    with_items:
-      - 'export VISUAL=vim'
-      - 'export EDITOR="$VISUAL"'
+ - name: Set vim as default editor
+   lineinfile:
+     path: '/home/vagrant/.bashrc'
+     insertafter: EOF
+     line: {{ item }}
+   with_items:
+     - 'export VISUAL=vim'
+     - 'export EDITOR="$VISUAL"'
