@@ -20,7 +20,6 @@
 
 
  - name: Build xcb-util-xrm
-   gather_facts: True
    make:
      chdir: '/home/vagrant/p/lib/Airblader/xcb-util-xrm'
      params:
