@@ -27,7 +27,7 @@
 
  - name: Copy dconf panel settings file to local system
    copy:
-     src: dconf.panel.settings
+     src: dconf.org.mate.panel.settings
      dest: '/tmp/dconf.org.mate.panel.settings'
 
 
