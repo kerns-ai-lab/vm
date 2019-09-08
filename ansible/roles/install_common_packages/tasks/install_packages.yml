@@ -1,0 +1,23 @@
+---
+ - name: Install common base packages
+   become: True
+   apt:
+     name: "{{ packages }}"
+   vars:
+     packages:
+      - feh
+      - tmux
+      - ranger
+      - git
+      - xclip
+      - vim
+
+
+  - name: Set vim as default editor
+    lineinfile:
+      path: '/home/vagrant/.bashrc'
+      insertafter: EOF
+      line: {{ item }}
+    with_items:
+      - 'export VISUAL=vim'
+      - 'export EDITOR="$VISUAL"'
