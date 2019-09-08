@@ -191,7 +191,7 @@ for_window [class="^.*"] border pixel 2
 hide_edge_borders both
 
 # Set wallpaper
-exec feh --bg-scale /home/vagrant/shared/wallpaper.jpg
+exec feh --bg-scale /home/vagrant/.config/i3/wallpaper.jpg
 
 # Start Transparency
 exec --no-startup-id compton

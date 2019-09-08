@@ -1,0 +1,5 @@
+---
+ - name: Install default wallpaper
+   copy:
+     src: wallpaper.jpg
+     dest: /home/vagrant/.config/i3/wallpaper.jpg
