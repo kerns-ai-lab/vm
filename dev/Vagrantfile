@@ -3,10 +3,10 @@
 
 Vagrant.configure("2") do |config|
   # Give vm definition a handle
-  config.vm.define "kernsai"
+  config.vm.define "dev"
 
   # Build upon base box from Vagrant repository
-  config.vm.box = "ubuntu/xenial64"
+  config.vm.box = "kernsai/mate-i3"
 
   # Uncomment public network and populate with your bridged IP
   # config.vm.network "public_network", ip: "< YOUR IP >"
@@ -14,7 +14,6 @@ Vagrant.configure("2") do |config|
 
   # Mount shared folders required for initialization
   config.vm.synced_folder "shared", "/home/vagrant/shared"
-  #config.vm.synced_folder "ansible", "/home/vagrant/ansible"
   
   # We don't want to insert a vagrant key into the box
   config.ssh.insert_key = false
@@ -30,22 +29,25 @@ Vagrant.configure("2") do |config|
     vb.cpus = 4
     vb.customize ["modifyvm", :id, "--ioapic", "on"]
     vb.customize ["modifyvm", :id, "--clipboard", "bidirectional"]
-    
+    vb.customize 'post-boot', ["controlvm", :id, "setvideomodehint", "1920", "1080", "24"]
   end
-     
-  config.vm.provision "shell", path: "./scripts/provision.sh"
-  #config.vm.provision "ansible_local" do |ansible|
-  #  ansible.playbook = "provision_nuc.yml"
-  #  ansible.provisioning_path = "/home/vagrant/ansible"
-  #  # True by default. Set explicitly as this is intended
-  #  ansible.install = true  
-  #  ansible.install_mode = "pip"
-  #  ansible.version = "2.6.1"
-  #  ansible.skip_tags = ["nuc:hw"]
-  #  ansible.groups = {
-  #    "vadapter" => ["vadapter"],
-  #    "adapters:children" => ["vadapter"]
-  #  }
-  #end 
+
+  config.vm.provision "shell", path: "./scripts/provision.sh"   
+
+  config.vm.provision "ansible_local" do |ansible|
+    ansible.playbook = "provision_dev.yml"
+    ansible.provisioning_path = "/home/vagrant/ansible"
+    # True by default. Set explicitly as this is intended
+    ansible.install = true  
+    ansible.install_mode = "pip"
+    ansible.version = "2.6.7"
+    ansible.groups = {
+      "vadapter" => ["dev"],
+      "adapters:children" => ["dev"]
+    }
+    ansible.host_vars = {
+      "remote_user" => "vagrant"
+    }
+  end 
 
 end
