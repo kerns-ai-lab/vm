@@ -32,4 +32,5 @@
    # https://stackoverflow.com/questions/33672491/how-to-use-ansible-to-provision-vim-vundle-plugin
  - name: Install vim plugins (Disable visual interface)
    become: True
+   become_user: vagrant
    shell: vim -E -s -c "source /home/vagrant/.vimrc" -c PluginInstall -c qa
