@@ -1,6 +1,6 @@
 ---
  - hosts: all
    roles:
-    - { role: 'install_python3' }
+    - { role: 'install_python' }
     - { role: 'configure_vim' }
     - { role: 'install_docker' }
