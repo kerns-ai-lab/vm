@@ -1,7 +1,7 @@
 ---
  - name: Install Docker pre-requisite dependencies
+   become: True
    apt:
-     become: True
      name: "{{ item }}"
    with_items:
     - apt-transport-https
