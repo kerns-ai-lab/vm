@@ -46,3 +46,6 @@ windowmanager='i3'
 
 [desktop/session]
 required-components-list=['windowmanager', 'panel']
+
+[marco/general]
+theme='BlackMATE'
