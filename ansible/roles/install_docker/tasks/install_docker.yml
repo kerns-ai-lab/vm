@@ -1,0 +1,42 @@
+---
+ - name: Install Docker pre-requisite dependencies
+   apt:
+     become: True
+     name: "{{ item }}"
+   with_items:
+    - apt-transport-https
+    - ca-certificates
+    - software-properties-common
+
+
+ - name: Add Docker GPG key to system
+   become: True
+   apt_key: 
+     url: https://download.docker.com/linux/ubuntu/gpg
+     state: present
+
+
+ - name: Add Docker repository to Apt sources
+   become: True
+   apt_repository:
+     repo: 'deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable' 
+     state: present
+     filename: docker
+     update_cache: True
+
+
+ - name: Install Docker
+   become: True
+   apt:
+     name: docker-ce
+     state: present
+
+
+ - name: Add existing Vagrant user to docker group
+   become: True
+   user:
+     name: vagrant
+     groups: docker
+     append: True
+     state: present
+
