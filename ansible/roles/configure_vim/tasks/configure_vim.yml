@@ -3,6 +3,7 @@
    become: True
    apt:
      name: "{{ item }}"
+     update_cache: True
    with_items:
     - vim
     - git
