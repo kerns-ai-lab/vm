@@ -2,3 +2,4 @@
  - hosts: all
    roles:
     - { role: 'install_python_dev_packages' }
+    - { role: 'configure_vim' }

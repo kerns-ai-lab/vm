@@ -1,0 +1,29 @@
+---
+ - name: Install vim
+   become: True
+   apt:
+     name: vim
+
+
+ - name: Create .vim directory for plugins
+   file:
+     path: /home/vagrant/.vim/bundle
+     owner: vagrant
+     group: vagrant
+     state: directory
+
+
+ - name: Clone and install Vundle plugin manager for Vim
+   git:
+     repo: https://github.com/VundleVim/Vundle.vim.git
+     dest: /home/vagrant/.vim/bundle/Vundle.vim
+
+
+ - name: Install vimrc
+   copy:
+     src: .vimrc
+     dest: /home/vagrant/.vimrc
+
+
+ - name: Install vim plugins
+   shell: vim +PluginInstall +qall
