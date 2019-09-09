@@ -1,7 +1,7 @@
 ---
  - name: Install docker-compose pre-requisite dependencies
+   become: True
    apt:
-     become: True
      name: "{{ item }}"
    with_items:
     - curl
