@@ -11,6 +11,8 @@
       - git
       - xclip
       - vim
+      - curl
+      - wget
 
 
  - name: Install google-chrome
