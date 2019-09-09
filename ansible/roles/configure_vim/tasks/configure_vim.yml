@@ -1,8 +1,11 @@
 ---
- - name: Install vim
+ - name: Ensure required dependencies are installed
    become: True
    apt:
-     name: vim
+     name: "{{ item }}"
+   with_items:
+    - vim
+    - git
 
 
  - name: Create .vim directory for plugins
@@ -25,5 +28,6 @@
      dest: /home/vagrant/.vimrc
 
 
- - name: Install vim plugins
-   shell: vim +PluginInstall +qall
+   # https://stackoverflow.com/questions/33672491/how-to-use-ansible-to-provision-vim-vundle-plugin
+ - name: Install vim plugins (Disable visual interface)
+   shell: vim -E -s -c "source /home/vagrant/.vimrc" -c PluginInstall -c qa
