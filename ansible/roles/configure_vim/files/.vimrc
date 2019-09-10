@@ -23,6 +23,7 @@ Plugin 'leafgarland/typescript-vim'
 Plugin 'romainl/Apprentice'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-fugitive'
 Plugin 'christoomey/vim-titlecase'
 Plugin 'christoomey/vim-sort-motion'
 
