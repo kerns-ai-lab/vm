@@ -26,6 +26,8 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-fugitive'
 Plugin 'christoomey/vim-titlecase'
 Plugin 'christoomey/vim-sort-motion'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 
 " All of your Plugins must be added before the following line
 call vundle#end()
@@ -35,6 +37,8 @@ filetype plugin indent on
 set t_Co=256
 " Set colorscheme
 colorscheme apprentice
+" Set airline theme
+let g:airline_theme='minimalist'
 
 " Set of basic vim options
 set tabstop=4       " How many spaces per tab
