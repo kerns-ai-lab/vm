@@ -21,6 +21,8 @@ Plugin 'moll/vim-node.git'
 Plugin 'lyuts/vim-rtags'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'romainl/Apprentice'
+Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-surround'
 
 " All of your Plugins must be added before the following line
 call vundle#end()
