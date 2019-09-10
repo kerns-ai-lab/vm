@@ -1,6 +1,7 @@
 # https://stackoverflow.com/questions/45269225/ansible-playbook-fails-to-lock-apt
 ---
  - name: Disable timers for unattended upgrade
+   become: True
    raw: systemctl disable --now {{ item }}
    with_items:
     - 'apt-daily.timer'
@@ -8,16 +9,20 @@
 
 
  - name: reload Systemctl daemon to apply the new changes
+   become: True
    raw: systemctl daemon-reload
 
 
  - name: Wait for any possibly running unattended-upgrade to finish
+   become: True
    raw: systemd-run --property="After=apt-daily.service apt-daily-upgrade.service" --wait /bin/true
 
 
  - name: Purge unattended upgrades
+   become: True
    raw: apt-get -y purge unattended-upgrades
 
 
  - name: Update apt cache
+   become: True
    raw: apt-get -y update
