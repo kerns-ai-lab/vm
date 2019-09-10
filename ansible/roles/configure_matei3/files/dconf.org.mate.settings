@@ -47,5 +47,6 @@ windowmanager='i3'
 [desktop/session]
 required-components-list=['windowmanager', 'panel']
 
-[marco/general]
-theme='BlackMATE'
+[desktop/interface]
+icon-theme='mate'
+gtk-theme='BlackMATE'
