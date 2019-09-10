@@ -1,4 +1,5 @@
 ---
+ - import_tasks: disable_unattended_upgrades.yml
  - import_tasks: install_mate.yml
  - import_tasks: remove_ubuntu_user.yml
  - import_tasks: install_purge.yml
