@@ -1,3 +1,4 @@
 ---
  - import_tasks: dconf_mate.yml
  - import_tasks: install_wallpaper.yml
+ - import_tasks: apt_upgrade.yml

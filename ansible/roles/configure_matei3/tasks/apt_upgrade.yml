@@ -1,0 +1,6 @@
+---
+ - name: Update and Upgrade the machine
+   become: True
+   apt:
+     upgrade: True
+     update_cache: True
