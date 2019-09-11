@@ -6,9 +6,23 @@
      update_cache: True
 
      
- - name: Install nodejs setup script /ppa
+ - name: Fetch nodejs setup script
    become: True
-   shell: curl -sL https://deb.nodesource.com/setup_{{ nodejs_version }}.x | sudo -E bash -
+   get_url:
+     url: https://deb.nodesource.com/setup_{{ nodejs_version }}.x
+     dest: /tmp/node_setup.sh
+
+
+ - name: Execute nodejs setup
+   become: True
+   shell: /tmp/node_setup.sh
+
+
+ - name: Remove nodejs setup
+   become: True
+   file:
+     path: /tmp/node_setup.sh
+     state: absent
 
 
  - name: Install nodejs
