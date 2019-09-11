@@ -40,12 +40,20 @@ background-color='#000000000000'
 [desktop/background]
 draw-background=false
 show-desktop-icons=false
+color-shading-type='vertical-gradient'
+primary-color='rgb(88,145,188)'
+picture-options='zoom'
+picture-filename='/usr/share/backgrounds/ubuntu-mate-common/3D-Sphere.jpg'
+secondary-color='rgb(60,143,37)'
 
 [desktop/session/required-components]
 windowmanager='i3'
 
 [desktop/session]
 required-components-list=['windowmanager', 'panel']
+
+[screensaver]
+idle-activation-enabled=false
 
 [desktop/interface]
 icon-theme='mate'
