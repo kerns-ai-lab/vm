@@ -16,6 +16,7 @@
  - name: Execute nodejs setup
    become: True
    shell: /tmp/node_setup.sh
+   mode: +x
 
 
  - name: Remove nodejs setup
