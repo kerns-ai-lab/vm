@@ -7,4 +7,4 @@
    roles:
     - { role: 'install_common_packages' }
     - { role: 'install_i3' }
-    - { role: 'configure_matei3' }
+    - { role: 'configure_mate_i3' }
