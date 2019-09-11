@@ -4,4 +4,5 @@
     - { role: 'install_python' }
     - { role: 'configure_vim' }
     - { role: 'install_docker' }
+    - { role: 'install_nodejs' }
     - { role: 'install_sublime' }
