@@ -1,0 +1,17 @@
+---
+ - name: Install prerequisites
+   become: True
+   apt:
+     name: build-essential
+     update_cache: True
+
+     
+ - name: Install nodejs setup script /ppa
+   become: True
+   shell: curl -sL https://deb.nodesource.com/setup_{{ nodejs_version }}.x | sudo -E bash -
+
+
+ - name: Install nodejs
+   become: True
+   apt:
+     name: nodejs
