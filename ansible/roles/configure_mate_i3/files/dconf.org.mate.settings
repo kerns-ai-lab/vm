@@ -46,6 +46,9 @@ picture-options='zoom'
 picture-filename='/usr/share/backgrounds/ubuntu-mate-common/3D-Sphere.jpg'
 secondary-color='rgb(60,143,37)'
 
+[desktop/lockdown]
+disable-lock-screen=true
+
 [desktop/session/required-components]
 windowmanager='i3'
 
