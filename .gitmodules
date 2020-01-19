@@ -1,0 +1,4 @@
+[submodule "ansible/roles/ansible-role-vscode"]
+	path = ansible/roles/ansible-role-vscode
+	url = https://github.com/kerns-ai-lab/ansible-role-vscode.git
+	branch = master
