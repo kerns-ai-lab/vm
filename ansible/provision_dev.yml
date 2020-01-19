@@ -1,8 +1,9 @@
 ---
  - hosts: all
    roles:
-    - { role: 'install_python' }
+    - { role: 'ansible-role-python' }
     - { role: 'configure_vim' }
     - { role: 'install_docker' }
     - { role: 'install_nodejs' }
     - { role: 'install_sublime' }
+    - { role: 'ansible-role-vscode' }
